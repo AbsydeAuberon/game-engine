@@ -126,12 +126,14 @@
     <ClCompile Include="..\..\Source\GameEngine\InputManager.cpp" />
     <ClCompile Include="..\..\Source\GameEngine\RenderManager.cpp" />
     <ClCompile Include="..\..\Source\GameEngine\Texture.cpp" />
+    <ClCompile Include="BaseObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GameEngine\InputManager.h" />
     <ClInclude Include="..\..\Source\GameEngine\RenderManager.h" />
     <ClInclude Include="..\..\Source\GameEngine\Singleton.h" />
     <ClInclude Include="..\..\Source\GameEngine\Texture.h" />
+    <ClInclude Include="BaseObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
