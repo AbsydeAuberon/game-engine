@@ -1,14 +1,24 @@
 #pragma once
+#include <SDL.h>
+#include <SDL_image.h>
+#include "Texture.h"
+
 class BaseObject
 {
 public:
-	//MEMBERS
-	static const int width;
-	static const int height;
+	///MEMBERS
+	//Position
+	float posX;
+	float posY;
+	//Rotation
+	float rotX;
+	float rotY;
+	//Texture
+	LTexture * texture;
 
 	//PROPERTIES
-	BaseObject();
-	virtual void Update();
-	~BaseObject();
+	BaseObject(float, float, float, float);
+	virtual void Update() = 0;
+	virtual ~BaseObject();
 };
 

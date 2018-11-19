@@ -1,15 +1,14 @@
 #include "BaseObject.h"
 
 
-
-BaseObject::BaseObject()
+BaseObject::BaseObject(float x, float y, float rX, float rY)
 {
+	posX = x;
+	posY = y;
+	rotX = rX;
+	rotY = rY;
 }
 
-void BaseObject::Update()
-{
-
-}
 
 BaseObject::~BaseObject()
 {
