@@ -1,12 +1,13 @@
 #include "BaseObject.h"
 
 
-BaseObject::BaseObject(float x, float y, float rX, float rY)
+BaseObject::BaseObject(float x, float y, float rot, std::string)
 {
 	posX = x;
 	posY = y;
-	rotX = rX;
-	rotY = rY;
+	rotation = rot;
+
+
 }
 
 

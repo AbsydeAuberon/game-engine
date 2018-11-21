@@ -3,6 +3,8 @@
 #include "Singleton.h"
 #include "SDL.h"
 #include "SDL_image.h"
+#include "Texture.h"
+#include <vector>
 
 /**
 Render Manager class
@@ -15,21 +17,23 @@ class RenderManager :public Singleton<RenderManager>
 
 public:
   //Screen dimension constants
-  static const int SCREEN_WIDTH  = 640;
-  static const int SCREEN_HEIGHT = 480;
-
+	static const int SCREEN_WIDTH  = 640;
+	static const int SCREEN_HEIGHT = 480;
+	
 private:
   //The window we'll be rendering to
-  SDL_Window   *mWindow = NULL;
+	SDL_Window   *mWindow = NULL;
   
   //The window renderer
-  SDL_Renderer *mRenderer = NULL;
+	SDL_Renderer *mRenderer = NULL;
 
+	//Vector of images
+	std::vector<LTexture> spriteVector;
   
 
   // Private constructor to avoid more than one instance
-  RenderManager();
-  ~RenderManager();
+	RenderManager();
+	~RenderManager();
 
   /*****************************************************************************/
 
@@ -43,6 +47,7 @@ public:
 
   SDL_Renderer *GetRenderer( void ) { return mRenderer; }
 
+  void addSprite(std::string)
   /*****************************************************************************/
 
 };

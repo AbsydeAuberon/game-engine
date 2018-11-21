@@ -1,7 +1,9 @@
 #pragma once
+
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Texture.h"
+
 
 class BaseObject
 {
@@ -11,13 +13,12 @@ public:
 	float posX;
 	float posY;
 	//Rotation
-	float rotX;
-	float rotY;
+	float rotation;
 	//Texture
 	LTexture * texture;
 
 	//PROPERTIES
-	BaseObject(float, float, float, float);
+	BaseObject(float, float, float, std::string);
 	virtual void Update() = 0;
 	virtual ~BaseObject();
 };
