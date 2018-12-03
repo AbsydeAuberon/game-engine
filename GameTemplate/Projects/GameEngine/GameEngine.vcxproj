@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\GameEngine\BaseObject.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\InputManager.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\MainManager.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\ObjectManager.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\RenderManager.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\Sprite.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\Texture.cpp" />
+    <ClCompile Include="..\..\Source\GameEngine\TimeManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\GameEngine\BaseObject.h" />
+    <ClInclude Include="..\..\Source\GameEngine\InputManager.h" />
+    <ClInclude Include="..\..\Source\GameEngine\MainManager.h" />
+    <ClInclude Include="..\..\Source\GameEngine\ObjectManager.h" />
+    <ClInclude Include="..\..\Source\GameEngine\RenderManager.h" />
+    <ClInclude Include="..\..\Source\GameEngine\Singleton.h" />
+    <ClInclude Include="..\..\Source\GameEngine\Sprite.h" />
+    <ClInclude Include="..\..\Source\GameEngine\Texture.h" />
+    <ClInclude Include="..\..\Source\GameEngine\TimeManager.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CCFB08AD-5A91-429D-905E-42EA934E5385}</ProjectGuid>
     <RootNamespace>GameEngine</RootNamespace>
@@ -122,25 +143,6 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\GameEngine\InputManager.cpp" />
-    <ClCompile Include="..\..\Source\GameEngine\RenderManager.cpp" />
-    <ClCompile Include="..\..\Source\GameEngine\Texture.cpp" />
-    <ClCompile Include="BaseObject.cpp" />
-    <ClCompile Include="MainManager.cpp" />
-    <ClCompile Include="ObjectManager.cpp" />
-    <ClCompile Include="TimeManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\GameEngine\InputManager.h" />
-    <ClInclude Include="..\..\Source\GameEngine\RenderManager.h" />
-    <ClInclude Include="..\..\Source\GameEngine\Singleton.h" />
-    <ClInclude Include="..\..\Source\GameEngine\Texture.h" />
-    <ClInclude Include="BaseObject.h" />
-    <ClInclude Include="MainManager.h" />
-    <ClInclude Include="ObjectManager.h" />
-    <ClInclude Include="TimeManager.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

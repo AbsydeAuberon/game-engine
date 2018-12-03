@@ -5,6 +5,7 @@
 #include "SDL_image.h"
 #include "Texture.h"
 #include <vector>
+#include "Sprite.h"
 
 /**
 Render Manager class
@@ -28,7 +29,7 @@ private:
 	SDL_Renderer *mRenderer = NULL;
 
 	//Vector of images
-	std::vector<LTexture> spriteVector;
+	std::vector<Sprite> spriteVector;
   
 
   // Private constructor to avoid more than one instance
@@ -47,7 +48,7 @@ public:
 
   SDL_Renderer *GetRenderer( void ) { return mRenderer; }
 
-  void addSprite(std::string)
+  void addSprite(std::string, BaseObject*);
   /*****************************************************************************/
 
 };

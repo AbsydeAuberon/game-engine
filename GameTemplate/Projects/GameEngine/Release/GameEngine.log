@@ -1,8 +1,8 @@
-﻿  InputManager.cpp
-  RenderManager.cpp
-  Texture.cpp
-  BaseObject.cpp
+﻿  BaseObject.cpp
   MainManager.cpp
   ObjectManager.cpp
+  RenderManager.cpp
+  Sprite.cpp
+  Texture.cpp
   TimeManager.cpp
   GameEngine.vcxproj -> C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Release\GameEngine.lib

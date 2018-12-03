@@ -23,6 +23,17 @@ RenderManager::~RenderManager(void)
 
 /*****************************************************************************/
 
+
+void RenderManager::addSprite(std::string path, BaseObject* reference)
+{
+	Sprite newSpr(path, reference);
+	spriteVector.push_back(newSpr);
+
+}
+
+
+
+
 bool RenderManager::Init(void)
 {
   //Initialization flag
