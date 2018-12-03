@@ -12,6 +12,7 @@ and may not be redistributed without written permission.*/
 
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "Player.h"
 
 //The dot that will move around on the screen
 class Dot
@@ -169,6 +170,8 @@ int main( int argc, char* args[] )
   InputManager::CreateSingleton();
 
   RenderManager::CreateSingleton();
+
+  Player pl(0.0f, 0.0f, 0.0f, "dot.bmp");
 
 	//Start up SDL and create window
 	if( !RenderManager::GetInstance().Init() )

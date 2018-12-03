@@ -1,9 +1,8 @@
 ﻿  main.cpp
-  Player.cpp
      Creando biblioteca C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Release\Game.lib y objeto C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Release\Game.exp
   Generando código
-  44 of 121 functions (36.4%) were compiled, the rest were copied from previous compilation.
-    28 functions were new in current compilation
+  38 of 195 functions (19.5%) were compiled, the rest were copied from previous compilation.
+    19 functions were new in current compilation
     20 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   Game.vcxproj -> C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Release\Game.exe

@@ -18,6 +18,7 @@ class RenderManager :public Singleton<RenderManager>
 
 public:
   //Screen dimension constants
+	std::string MediaFolder = std::string("../../Media/");
 	static const int SCREEN_WIDTH  = 640;
 	static const int SCREEN_HEIGHT = 480;
 	

@@ -1,7 +1,13 @@
 #pragma once
-class Player
+#include "BaseObject.h"
+
+
+class Player : public BaseObject
 {
+
 public:
-	Player();
+	Player(float x, float y, float rot, std::string path);
 	~Player();
+	virtual void Update();
+
 };

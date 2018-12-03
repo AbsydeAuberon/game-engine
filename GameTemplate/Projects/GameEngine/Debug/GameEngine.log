@@ -1,5 +1,2 @@
-﻿  Texture.cpp
-  RenderManager.cpp
-  InputManager.cpp
-  Generating Code...
-  GameEngine.vcxproj -> J:\Profesional\Trabajo\Clases\UniversidadSanJorge\Asignaturas\GameEngines\18-19\Game\GameTemplate\Projects\Debug\GameEngine.lib
+﻿  Sprite.cpp
+  GameEngine.vcxproj -> C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Debug\GameEngine.lib
