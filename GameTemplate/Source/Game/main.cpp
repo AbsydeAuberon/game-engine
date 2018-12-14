@@ -12,6 +12,7 @@ and may not be redistributed without written permission.*/
 
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "ObjectManager.h"
 #include "Player.h"
 
 //The dot that will move around on the screen
@@ -171,7 +172,8 @@ int main( int argc, char* args[] )
 
   RenderManager::CreateSingleton();
 
-  Player pl(0.0f, 0.0f, 0.0f, "dot.bmp");
+  
+
 
 	//Start up SDL and create window
 	if( !RenderManager::GetInstance().Init() )
@@ -180,6 +182,14 @@ int main( int argc, char* args[] )
 	}
 	else
 	{
+		ObjectManager::CreateSingleton();
+
+		BaseObject * player = new Player(0.0f, 0.0f, 0.0f, "dot.bmp");
+
+		ObjectManager::GetInstance().addObject(player);
+
+
+
 		//Load media
 		if( !loadMedia() )
 		{
@@ -194,7 +204,6 @@ int main( int argc, char* args[] )
 			SDL_Event e;
 
 			//The dot that will be moving around on the screen
-			Dot dot;
 
 			//While application is running
 			while( !quit )
@@ -208,27 +217,12 @@ int main( int argc, char* args[] )
 						quit = true;
 					}
 
-					//Handle input for the dot
-					dot.handleEvent( e );
 				}
 
-        InputManager::GetInstance().Update();
-        if (InputManager::GetInstance().GetKey(SDL_SCANCODE_UP) ) {
-          
-        }
-
-				//Move the dot
-				dot.move();
-
-				//Clear screen
-				SDL_SetRenderDrawColor( RenderManager::GetInstance().GetRenderer(), 0xFF, 0xFF, 0xFF, 0xFF );
-				SDL_RenderClear(RenderManager::GetInstance().GetRenderer());
-
-				//Render objects
-				dot.render();
-
-				//Update screen
-				SDL_RenderPresent(RenderManager::GetInstance().GetRenderer());
+				InputManager::GetInstance().Update();
+				ObjectManager::GetInstance().Update();
+				RenderManager::GetInstance().Update();
+				
 			}
 		}
 	}

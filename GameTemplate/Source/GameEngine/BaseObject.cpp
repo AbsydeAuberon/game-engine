@@ -9,7 +9,6 @@ BaseObject::BaseObject(float x, float y, float rot, std::string path)
 	RenderManager::GetInstance().addSprite(path, this);
 }
 
-
 BaseObject::~BaseObject()
 {
 }

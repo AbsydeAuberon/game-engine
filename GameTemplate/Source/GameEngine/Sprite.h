@@ -15,5 +15,6 @@ public:
 	///PROPERTIES
 	Sprite(std::string, BaseObject*);
 	~Sprite();
+	void Render();
 };
 

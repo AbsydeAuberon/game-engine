@@ -93,6 +93,15 @@ bool RenderManager::Init(void)
 
 void RenderManager::Update(void)
 {
+	SDL_SetRenderDrawColor(mRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+	SDL_RenderClear(mRenderer);
+
+	for (size_t i = 0; i < spriteVector.size(); i++)
+	{
+		spriteVector[i].Render();
+	}
+
+	SDL_RenderPresent(mRenderer);
 }
 
 /*****************************************************************************/

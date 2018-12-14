@@ -1,19 +1,18 @@
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\gameengine\debug\gameengine.pdb
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\gameengine\debug\gameengine.idb
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\gameengine\debug\inputmanager.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\gameengine\debug\rendermanager.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\gameengine\debug\texture.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\implementation - 04addingnewproject\projects\debug\gameengine.lib
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\inputmanager.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\rendermanager.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\texture.obj
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.idb
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.pdb
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\debug\gameengine.pdb
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\debug\gameengine.lib
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.command.1.tlog
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.read.1.tlog
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.write.1.tlog
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\lib-link.read.1.tlog
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\lib-link.write.1.tlog
-j:\profesional\trabajo\clases\universidadsanjorge\asignaturas\gameengines\18-19\game\gametemplate\projects\gameengine\debug\gameengine.tlog\lib.command.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.pdb
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.idb
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\timemanager.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\texture.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\sprite.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\rendermanager.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\objectmanager.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\mainmanager.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\inputmanager.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\baseobject.obj
+c:\users\auber\documents\github\game-engine\gametemplate\projects\debug\gameengine.lib
+c:\users\auber\documents\github\game-engine\gametemplate\projects\debug\gameengine.pdb
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.command.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.read.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\cl.write.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\lib-link.read.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\lib-link.write.1.tlog
+c:\users\auber\documents\github\game-engine\gametemplate\projects\gameengine\debug\gameengine.tlog\lib.command.1.tlog

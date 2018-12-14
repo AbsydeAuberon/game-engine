@@ -13,3 +13,8 @@ Sprite::Sprite(std::string path, BaseObject* reference)
 Sprite::~Sprite()
 {
 }
+
+void Sprite::Render()
+{
+	texture->render(object->posX, object->posY);
+}
