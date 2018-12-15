@@ -14,6 +14,9 @@ public:
 	float posY;
 	//Rotation
 	float rotation;
+	//Texture check boolean
+	bool isTextureLoaded;
+
 
 	///PROPERTIES
 	BaseObject(float, float, float, std::string);

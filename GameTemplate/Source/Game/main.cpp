@@ -47,15 +47,13 @@ class Dot
 };
 
 //Starts up SDL and creates window
-bool init();
+
 
 //Loads media
 bool loadMedia();
 
 //Frees media and shuts down SDL
 void close();
-
-
 
 
 //Scene textures
@@ -191,7 +189,7 @@ int main( int argc, char* args[] )
 
 
 		//Load media
-		if( !loadMedia() )
+		if(!ObjectManager::GetInstance().isMediaLoaded())
 		{
 			printf( "Failed to load media!\n" );
 		}

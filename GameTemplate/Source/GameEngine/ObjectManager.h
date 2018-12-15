@@ -15,7 +15,6 @@ class ObjectManager : public Singleton<ObjectManager>
 
 private:
 	ObjectManager();
-
 	~ObjectManager();
 
 public:
@@ -23,5 +22,6 @@ public:
 	void addObject(BaseObject *);
 	void Update(void);
 	void removeObject(BaseObject *);
+	bool isMediaLoaded();
 
 };

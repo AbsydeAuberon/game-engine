@@ -10,15 +10,20 @@ RenderManager::RenderManager(void)
 
 RenderManager::~RenderManager(void)
 {
-  //Destroy window	
-  SDL_DestroyRenderer(mRenderer);
-  SDL_DestroyWindow(mWindow);
-  mWindow = NULL;
-  mRenderer = NULL;
+	for (size_t i = 0; i < spriteVector.size(); i++)
+	{
+		spriteVector[i].texture->free();
+	}
 
-  //Quit SDL subsystems
-  IMG_Quit();
-  SDL_Quit();
+	//Destroy window	
+	SDL_DestroyRenderer(mRenderer);
+	SDL_DestroyWindow(mWindow);
+	mWindow = NULL;
+	mRenderer = NULL;
+
+	//Quit SDL subsystems
+	IMG_Quit();
+	SDL_Quit();
 }
 
 /*****************************************************************************/

@@ -26,7 +26,7 @@ void ObjectManager::Update(void)
 
 void ObjectManager::removeObject(BaseObject * referenceObject)
 {
-	for (size_t i = 0; i < ArrayObjects.size(); )
+	for (size_t i = 0; i < ArrayObjects.size(); i++)
 	{
 		if (ArrayObjects[i] == referenceObject) {
 			ArrayObjects.erase(ArrayObjects.begin() + i);
@@ -35,4 +35,18 @@ void ObjectManager::removeObject(BaseObject * referenceObject)
 			++i;
 		}
 	}
+}
+
+bool ObjectManager::isMediaLoaded()
+{
+	bool checkMedia = true;
+	for (size_t i = 0; i < ArrayObjects.size(); i++)
+	{
+		if (!ArrayObjects[i]->isTextureLoaded)
+		{
+			checkMedia = false;
+		}
+	}
+
+	return checkMedia;
 }
