@@ -1,1 +1,5 @@
-﻿  Game.vcxproj -> C:\Users\auber\Documents\GitHub\game-engine\GameTemplate\Projects\Debug\Game.exe
+﻿  main.cpp
+  Player.cpp
+  Generando código...
+     Creando biblioteca C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.lib y objeto C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.exp
+  Game.vcxproj -> C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.exe

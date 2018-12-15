@@ -10,6 +10,7 @@ and may not be redistributed without written permission.*/
 
 #include "Texture.h"
 
+#include "TimeManager.h"
 #include "InputManager.h"
 #include "RenderManager.h"
 #include "ObjectManager.h"
@@ -166,6 +167,8 @@ void close()
 
 int main( int argc, char* args[] )
 {
+  TimeManager::CreateSingleton();
+  
   InputManager::CreateSingleton();
 
   RenderManager::CreateSingleton();
@@ -217,6 +220,7 @@ int main( int argc, char* args[] )
 
 				}
 
+				TimeManager::GetInstance().Update();
 				InputManager::GetInstance().Update();
 				ObjectManager::GetInstance().Update();
 				RenderManager::GetInstance().Update();

@@ -4,7 +4,6 @@
 #include <vector>
 #include "BaseObject.h"
 
-
 class ObjectManager : public Singleton<ObjectManager>
 {
 	/**/
