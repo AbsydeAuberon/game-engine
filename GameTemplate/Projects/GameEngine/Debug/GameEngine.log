@@ -1,11 +1,2 @@
-﻿  BaseObject.cpp
-  InputManager.cpp
-  MainManager.cpp
-  ObjectManager.cpp
-  RenderManager.cpp
-  Sprite.cpp
-c:\githubalvarojavi\game-engine\gametemplate\source\gameengine\sprite.cpp(27): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Texture.cpp
-  TimeManager.cpp
-  Generando código...
-  GameEngine.vcxproj -> C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\GameEngine.lib
+﻿  ObjectManager.cpp
+  GameEngine.vcxproj -> C:\Users\auber\Desktop\game-engine\GameTemplate\Projects\Debug\GameEngine.lib

@@ -18,18 +18,21 @@ public:
 	
 	
 	void Update(void);
-	
+	float getDelta();
+	int getSecondsPassed();
 
 private:
 
 	TimeManager();
 	~TimeManager();
 
+	Uint32 lastTime;
 	Uint32 actualTime;
 	SDL_Color textColor;
-	float contador;
+	float deltaTime;
+	int count;
 	Uint32 startTime;
-	std::stringstream timeText;
+	int secondsPassed;
 
 };
 

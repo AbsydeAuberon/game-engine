@@ -1,5 +1,4 @@
 ﻿  main.cpp
-  Player.cpp
-  Generando código...
-     Creando biblioteca C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.lib y objeto C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.exp
-  Game.vcxproj -> C:\GitHubAlvaroJavi\game-engine\GameTemplate\Projects\Debug\Game.exe
+c:\users\auber\desktop\game-engine\gametemplate\source\game\main.cpp(72): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+     Creando biblioteca C:\Users\auber\Desktop\game-engine\GameTemplate\Projects\Debug\Game.lib y objeto C:\Users\auber\Desktop\game-engine\GameTemplate\Projects\Debug\Game.exp
+  Game.vcxproj -> C:\Users\auber\Desktop\game-engine\GameTemplate\Projects\Debug\Game.exe

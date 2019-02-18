@@ -13,3 +13,4 @@ BaseObject::BaseObject(float x, float y, float rot, std::string path)
 BaseObject::~BaseObject()
 {
 }
+

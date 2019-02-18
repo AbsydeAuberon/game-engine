@@ -24,5 +24,5 @@ Sprite::~Sprite()
 
 void Sprite::Render()
 {
-	texture->render(object->posX, object->posY);
+	texture->render((int)object->posX, (int)object->posY);
 }

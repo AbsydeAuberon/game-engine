@@ -1,0 +1,5 @@
+﻿  DropItem.cpp
+c:\users\auber\desktop\game-engine\gametemplate\source\game2\dropitem.cpp(13): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\auber\desktop\game-engine\gametemplate\source\game2\dropitem.cpp(27): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\auber\desktop\game-engine\gametemplate\source\game2\dropitem.cpp(29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Game2.vcxproj -> C:\Users\auber\Desktop\game-engine\GameTemplate\Projects\Debug\Game2.exe

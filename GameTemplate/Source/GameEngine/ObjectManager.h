@@ -4,6 +4,7 @@
 #include <vector>
 #include "BaseObject.h"
 
+
 class ObjectManager : public Singleton<ObjectManager>
 {
 	/**/
@@ -18,6 +19,8 @@ private:
 
 public:
 
+	BaseObject * getObjectFromIndex(int);
+	int getArrayLength();
 	void addObject(BaseObject *);
 	void Update(void);
 	void removeObject(BaseObject *);

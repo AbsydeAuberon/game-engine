@@ -30,6 +30,7 @@ void ObjectManager::removeObject(BaseObject * referenceObject)
 	{
 		if (ArrayObjects[i] == referenceObject) {
 			ArrayObjects.erase(ArrayObjects.begin() + i);
+			delete referenceObject;
 		}
 		else {
 			++i;
@@ -50,3 +51,11 @@ bool ObjectManager::isMediaLoaded()
 
 	return checkMedia;
 }
+
+
+BaseObject * ObjectManager::getObjectFromIndex(int ind) {
+	return ArrayObjects[ind];
+}
+
+
+int ObjectManager::getArrayLength() { return ArrayObjects.size(); }

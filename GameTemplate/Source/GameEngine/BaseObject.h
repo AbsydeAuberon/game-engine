@@ -16,11 +16,12 @@ public:
 	float rotation;
 	//Texture check boolean
 	bool isTextureLoaded;
-
+	SDL_Rect mCollider;
 
 	///PROPERTIES
 	BaseObject(float, float, float, std::string);
 	virtual void Update() = 0;
+	virtual SDL_Rect getCollider() = 0;
 	virtual ~BaseObject();
 };
 

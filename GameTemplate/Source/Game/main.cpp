@@ -1,10 +1,7 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2015)
-and may not be redistributed without written permission.*/
-//YA VES
-
 //Using SDL, SDL_image, standard IO, and strings
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include <stdio.h>
 #include <string>
 
@@ -14,166 +11,75 @@ and may not be redistributed without written permission.*/
 #include "InputManager.h"
 #include "RenderManager.h"
 #include "ObjectManager.h"
+#include "SoundManager.h"
 #include "Player.h"
+#include "DropItem.h"
+#include <ctime>
+#include <Windows.h>
 
-//The dot that will move around on the screen
-class Dot
+bool checkCollision(SDL_Rect a, SDL_Rect b)
 {
-    public:
-		//The dimensions of the dot
-		static const int DOT_WIDTH = 20;
-		static const int DOT_HEIGHT = 20;
+	//The sides of the rectangles
+	int leftA, leftB;
+	int rightA, rightB;
+	int topA, topB;
+	int bottomA, bottomB;
 
-		//Maximum axis velocity of the dot
-		static const int DOT_VEL = 10;
+	//Calculate the sides of rect A
+	leftA = a.x;
+	rightA = a.x + a.w;
+	topA = a.y;
+	bottomA = a.y + a.h;
 
-		//Initializes the variables
-		Dot();
+	//Calculate the sides of rect B
+	leftB = b.x;
+	rightB = b.x + b.w;
+	topB = b.y;
+	bottomB = b.y + b.h;
 
-		//Takes key presses and adjusts the dot's velocity
-		void handleEvent( SDL_Event& e );
-
-		//Moves the dot
-		void move();
-
-		//Shows the dot on the screen
-		void render();
-
-    private:
-		//The X and Y offsets of the dot
-		int mPosX, mPosY;
-
-		//The velocity of the dot
-		int mVelX, mVelY;
-};
-
-//Starts up SDL and creates window
-
-
-//Loads media
-bool loadMedia();
-
-//Frees media and shuts down SDL
-void close();
-
-
-//Scene textures
-LTexture gDotTexture;
-
-
-Dot::Dot()
-{
-    //Initialize the offsets
-    mPosX = 0;
-    mPosY = 0;
-
-    //Initialize the velocity
-    mVelX = 0;
-    mVelY = 0;
-}
-
-void Dot::handleEvent( SDL_Event& e )
-{
-    //If a key was pressed
-	if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
-    {
-        //Adjust the velocity
-        switch( e.key.keysym.sym )
-        {
-            case SDLK_UP: mVelY -= DOT_VEL; break;
-            case SDLK_DOWN: mVelY += DOT_VEL; break;
-            case SDLK_LEFT: mVelX -= DOT_VEL; break;
-            case SDLK_RIGHT: mVelX += DOT_VEL; break;
-        }
-    }
-    //If a key was released
-    else if( e.type == SDL_KEYUP && e.key.repeat == 0 )
-    {
-        //Adjust the velocity
-        switch( e.key.keysym.sym )
-        {
-            case SDLK_UP: mVelY += DOT_VEL; break;
-            case SDLK_DOWN: mVelY -= DOT_VEL; break;
-            case SDLK_LEFT: mVelX += DOT_VEL; break;
-            case SDLK_RIGHT: mVelX -= DOT_VEL; break;
-        }
-    }
-}
-
-void Dot::move()
-{
-  mVelX = 0;
-  mVelY = 0;
-  if (InputManager::GetInstance().GetKey(SDL_SCANCODE_UP)) {
-    mVelY -= DOT_VEL;
-  }
-  if (InputManager::GetInstance().GetKey(SDL_SCANCODE_DOWN)) {
-    mVelY += DOT_VEL;
-  }
-  if (InputManager::GetInstance().GetKey(SDL_SCANCODE_LEFT)) {
-    mVelX -= DOT_VEL;
-  }
-  if (InputManager::GetInstance().GetKey(SDL_SCANCODE_RIGHT)) {
-    mVelX += DOT_VEL;
-  }
-
-  //Move the dot left or right
-  mPosX += mVelX;
-
-  //If the dot went too far to the left or right
-  if( ( mPosX < 0 ) || ( mPosX + DOT_WIDTH > RenderManager::SCREEN_WIDTH ) )
-  {
-      //Move back
-      mPosX -= mVelX;
-  }
-
-  //Move the dot up or down
-  mPosY += mVelY;
-
-  //If the dot went too far up or down
-  if( ( mPosY < 0 ) || ( mPosY + DOT_HEIGHT > RenderManager::SCREEN_HEIGHT ) )
-  {
-      //Move back
-      mPosY -= mVelY;
-  }
-}
-
-void Dot::render()
-{
-    //Show the dot
-	gDotTexture.render( mPosX, mPosY );
-}
-
-bool loadMedia()
-{
-	//Loading success flag
-	bool success = true;
-
-	//Load dot texture
-	if( !gDotTexture.loadFromFile( "../../Media/dot.bmp" ) )
+	//If any of the sides from A are outside of B
+	if (bottomA <= topB)
 	{
-		printf( "Failed to load dot texture!\n" );
-		success = false;
+		return false;
 	}
 
-	return success;
+	if (topA >= bottomB)
+	{
+		return false;
+	}
+
+	if (rightA <= leftB)
+	{
+		return false;
+	}
+
+	if (leftA >= rightB)
+	{
+		return false;
+	}
+
+	//If none of the sides from A are outside B
+	return true;
 }
 
-void close()
-{
-	//Free loaded images
-	gDotTexture.free();
-}
+
 
 int main( int argc, char* args[] )
 {
-  TimeManager::CreateSingleton();
-  
-  InputManager::CreateSingleton();
+	
+	int finishTime = 30;
 
-  RenderManager::CreateSingleton();
+	srand(time(NULL));
 
-  
+	TimeManager::CreateSingleton();
+	
+	InputManager::CreateSingleton();
+
+	RenderManager::CreateSingleton();
+
+	SoundManager::CreateSingleton();
+	
+	
 
 
 	//Start up SDL and create window
@@ -183,11 +89,18 @@ int main( int argc, char* args[] )
 	}
 	else
 	{
+
+
 		ObjectManager::CreateSingleton();
 
-		BaseObject * player = new Player(0.0f, 0.0f, 0.0f, "dot.bmp");
-
+		BaseObject * player = new Player(RenderManager::SCREEN_WIDTH/2,
+										 RenderManager::SCREEN_HEIGHT - Player::PLAYER_HEIGHT,
+										 0.0f, "dot.bmp");
 		ObjectManager::GetInstance().addObject(player);
+
+		ObjectManager::GetInstance().addObject(new DropItem(0.0f, 0.0f, 0.0f, "item.png"));
+
+
 
 
 
@@ -212,6 +125,8 @@ int main( int argc, char* args[] )
 				//Handle events on queue
 				while( SDL_PollEvent( &e ) != 0 )
 				{
+					
+
 					//User requests quit
 					if( e.type == SDL_QUIT )
 					{
@@ -223,14 +138,43 @@ int main( int argc, char* args[] )
 				TimeManager::GetInstance().Update();
 				InputManager::GetInstance().Update();
 				ObjectManager::GetInstance().Update();
+				
+				//some kind of physics update
+				for (int i = 1; i < ObjectManager::GetInstance().getArrayLength(); i++)
+				{
+					Player * pl = (Player*)ObjectManager::GetInstance().getObjectFromIndex(0);
+					DropItem * di = (DropItem*)ObjectManager::GetInstance().getObjectFromIndex(i);
+					
+						if (checkCollision(pl->getCollider(), di->getCollider()))
+						{
+							int score = pl->getScore() + 1;
+							pl->setScore(score);
+							ObjectManager::GetInstance().removeObject(di);
+							ObjectManager::GetInstance().addObject(new DropItem(0.0f, 0.0f, 0.0f, "item.png"));
+						}
+
+						if (TimeManager::GetInstance().getSecondsPassed() >= finishTime)
+						{
+							quit = true;
+						}
+					
+				}
+
+				
 				RenderManager::GetInstance().Update();
+				SoundManager::GetInstance().Update();
+				if (quit == true)
+				{
+					Player * pl = (Player*)ObjectManager::GetInstance().getObjectFromIndex(0);
+					printf("TIME OUT!! YOU GET %i BALLS!", pl->getScore());
+					Sleep(1000);
+				}
 				
 			}
 		}
 	}
 
 	//Free resources and close SDL
-	close();
-
 	return 0;
 }
+

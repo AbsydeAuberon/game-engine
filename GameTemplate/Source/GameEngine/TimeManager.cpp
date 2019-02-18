@@ -4,11 +4,9 @@
 TimeManager::TimeManager()
 {
 	actualTime = 0;
-	contador = 0.0f;
+	count = -1;
 	startTime = 0;
-	//SDL_Color textColor = { 0, 0, 0, 255 };
-	//std::stringstream timeText;
-
+	secondsPassed = -1;
 }
 
 
@@ -19,17 +17,17 @@ TimeManager::~TimeManager()
 void TimeManager::Update(void)
 {
 	actualTime = SDL_GetTicks();
-
+	deltaTime = (float(actualTime - lastTime))/1000;
 	if (actualTime > startTime + 1000)
 	{
-		
-		printf(" The actual time is: %f", contador);
-		contador = 0;
+		secondsPassed++;
+		count = -1;
 		startTime = actualTime;
-		//float timeInSeconds = actualTime / 1000;
-
 	}
-	contador++;
-
-	
+	count++;
+	lastTime = actualTime;
 }
+
+int TimeManager::getSecondsPassed() { return secondsPassed; }
+
+float TimeManager::getDelta() { return deltaTime; }

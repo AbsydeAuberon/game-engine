@@ -1,14 +1,17 @@
 #include "Player.h"
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "TimeManager.h"
 
 Player::Player(float x, float y, float rot, std::string path) :
 	BaseObject::BaseObject(x, y, rot, path)
 {
+	score = 0;
 	velX = 0;
 	velY = 0;
-	maxSpeed = 10;
-	speed = 0;
+	mCollider.w = PLAYER_WIDTH;
+	mCollider.h = PLAYER_HEIGHT;
+	maxSpeed = 200;
 }
 
 
@@ -27,20 +30,21 @@ void Player::move()
 	velY = 0;
 	
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_UP)) {
-		velY -= maxSpeed;
+		velY -= maxSpeed * TimeManager::GetInstance().getDelta();
 	}
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_DOWN)) {
-		velY += maxSpeed;
+		velY += maxSpeed * TimeManager::GetInstance().getDelta();
 	}
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_LEFT)) {
-		velX -= maxSpeed;
+		velX -= maxSpeed * TimeManager::GetInstance().getDelta();
 	}
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_RIGHT)) {
-		velX += maxSpeed;
+		velX += maxSpeed * TimeManager::GetInstance().getDelta();
 	}
 
 	//Move the dot left or right
 	posX += velX;
+	mCollider.x = posX;
 
 	//If the dot went too far to the left or right
 	if ((posX < 0) || (posX + PLAYER_WIDTH > RenderManager::SCREEN_WIDTH))
@@ -51,6 +55,7 @@ void Player::move()
 
 	//Move the dot up or down
 	posY += velY;
+	mCollider.y = posY;
 
 	//If the dot went too far up or down
 	if ((posY < 0) || (posY + PLAYER_HEIGHT > RenderManager::SCREEN_HEIGHT))
@@ -60,3 +65,7 @@ void Player::move()
 	}
 }
 
+SDL_Rect Player::getCollider() { return mCollider; }
+
+int Player::getScore() { return score; }
+void Player::setScore(int value) { score = value; }
